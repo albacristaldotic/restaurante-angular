@@ -1,0 +1,198 @@
+@use './assets/styles/variables' as var;
+
+/* ---------------- Reset CSS ---------------- */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, b,
+u, i, center,
+dl, dt, dd, ol, ul,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1.6;
+  width: 100vw;
+  overflow-x: hidden;
+  font-family: var.$fuente-principal;
+  color: var.$color-texto;
+  background-color: var.$color-fondo;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+app-root {
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* ---------------- Tipografía ---------------- */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 700;
+  color: var.$color-principal;
+  font-family: var.$fuente-titulos;
+  margin-bottom: 1rem;
+}
+
+h1 {
+  font-size: 2.5rem;
+  color: var.$color-acento;
+}
+
+h2 {
+  font-size: 2rem;
+  color: var.$color-secundario;
+}
+
+.margen-chico {
+  margin: 10px;
+}
+
+.negrita {
+  font-weight: bold;
+}
+
+/* ---------------- Flex ---------------- */
+.flex-center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.flex-apart {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* ---------------- Cards ---------------- */
+.card {
+  background: linear-gradient(135deg, var.$color-principal-claro 0%, #ffffff 100%);
+  border: 2px solid var.$color-borde;
+  border-radius: var.$border-radius-mediano;
+  padding: 20px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  margin: 15px;
+  transition: all 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* ---------------- Botones ---------------- */
+button {
+  background: linear-gradient(to bottom, var.$color-principal, var.$color-acento);
+  color: white;
+  border: none;
+  border-radius: var.$border-radius-chico;
+  padding: 12px 24px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+button:hover {
+  background: linear-gradient(to bottom, var.$color-acento, var.$color-principal);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* ---------------- Clases gastronómicas ---------------- */
+.sello-organic {
+  background-color: var.$color-sello-comida;
+  color: white;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+
+.sello-premium {
+  background-color: var.$color-sello-premium;
+  color: white;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: bold;
+}
+
+.precio {
+  color: var.$color-acento;
+  font-size: 1.5rem;
+  font-weight: bold;
+  font-family: var.$fuente-titulos;
+}
+
+/* ---------------- Responsive Breakpoints ---------------- */
+@media screen and (max-width: 768px) {
+  h1 {
+    font-size: 2rem;
+  }
+  h2 {
+    font-size: 1.5rem;
+  }
+  .card {
+    padding: 15px;
+    margin: 10px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  h1 {
+    font-size: 1.7rem;
+  }
+  h2 {
+    font-size: 1.3rem;
+  }
+  h4 {
+    font-size: 1rem;
+    word-wrap: break-word; /* forzar que títulos largos se ajusten */
+  }
+  .card {
+    padding: 10px;
+    margin: 8px;
+  }
+  button {
+    padding: 10px 20px;
+    font-size: 0.9rem;
+  }
+}

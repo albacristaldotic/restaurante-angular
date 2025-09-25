@@ -1,0 +1,84 @@
+@use "./../../../../assets/styles/variables.scss";
+
+#container {
+  height: 80px;
+  display: flex;
+  background-color: variables.$color-principal-claro;
+  border-radius: variables.$border-radius-chico;
+  overflow: hidden;
+  font-size: small;
+}
+
+#foto {
+  height: 100%;
+  flex: 2;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: end;
+  gap: 5px;
+
+  img {
+    height: 20px;
+    margin-bottom: 5px;
+    background-color: variables.$color-sello-comida;
+    border-radius: 50px;
+
+    &:first-child {
+      margin-left: 5px;
+    }
+  }
+}
+
+#detalles {
+  flex: 3;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 20px;
+}
+
+h4 {
+  font-weight: bold;
+  margin-bottom: 5px;
+
+  // 👇 Ajustes para que siempre se vea completo
+  white-space: normal;   // permite que el texto baje de línea
+  word-wrap: break-word; // corta palabras largas si hace falta
+  overflow: visible;
+  text-overflow: unset;
+  font-size: 0.9rem;
+  line-height: 1.2rem;
+}
+
+ul li {
+  display: inline;
+  font-size: x-small;
+
+  &:not(:last-of-type)::after {
+    content: ",";
+    margin-left: -2px;
+  }
+}
+
+#precio {
+  text-align: end;
+  font-weight: bold;
+}
+
+// --- Responsive ---
+@media (max-width: 768px) {
+  #container {
+    height: auto; // deja que crezca si el título es muy largo
+    min-height: 80px;
+  }
+
+  #detalles {
+    padding: 10px;
+  }
+
+  h4 {
+    font-size: 0.85rem;
+    line-height: 1rem;
+  }
+}

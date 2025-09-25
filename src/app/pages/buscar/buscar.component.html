@@ -1,0 +1,44 @@
+<section>
+  <form #buscarForm="ngForm" (change)="buscar()" productos>
+    <!-- Barra de búsqueda -->
+    <div id="barra-busqueda">
+      <img src="./../../../assets/icons/lupapy.svg" alt="Buscar">
+      <input type="text" name="texto" [(ngModel)]="parametrosBusqueda.texto" #texto="ngModel" placeholder="Buscar producto...">
+    </div>
+
+    <!-- Filtros -->
+    <div id="filtros-container">
+      <div class="apto-container">
+        <img src="./../../../assets/icons/celiaco.png" alt="Apto celíaco">
+        <input type="checkbox" name="celiaco" id="celiaco" [(ngModel)]="parametrosBusqueda.aptoCeliaco" #celiaco="ngModel">
+        <span>Apto celíaco</span>
+      </div>
+
+      <div class="apto-container">
+        <img src="./../../../assets/icons/saludable.png" alt="Saludable">
+        <input type="checkbox" name="saludable" id="saludable" [(ngModel)]="parametrosBusqueda.aptoSaludable" #saludable="ngModel">
+        <span>Saludable</span>
+      </div>
+
+      <div class="apto-container">
+        <img src="./../../../assets/icons/sinazucar.png" alt="Sin azúcar">
+        <input type="checkbox" name="sinAzucar" id="sinAzucar" [(ngModel)]="parametrosBusqueda.aptoSinAzucar" #sinAzucar="ngModel">
+        <span>Sin azúcar</span>
+      </div>
+    </div>
+  </form>
+
+  <!-- Productos -->
+  <div id="contenedor-productos" *ngIf="productos().length !== 0; else sinResultado">
+    <app-tarjeta-producto
+      *ngFor="let producto of productos()"
+      [producto]="producto"
+      [routerLink]="['/articulo', producto.id]">
+    </app-tarjeta-producto>
+  </div>
+
+  <!-- Mensaje si no hay resultados -->
+  <ng-template #sinResultado>
+    <h2>Tu búsqueda no arrojó ningún resultado</h2>
+  </ng-template>
+</section>
