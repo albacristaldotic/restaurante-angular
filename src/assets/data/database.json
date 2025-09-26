@@ -2,7 +2,7 @@
   {
     "id": 1,
     "nombre": "Comida Típica Paraguaya",
-    "fotoUrl": "assets/img/foodpy.png",
+    "fotoUrl": "./assets/img/foodpy.png",
     "productos": [
       {
         "id": "1",
@@ -12,7 +12,7 @@
         "esSaludable": false,
         "esSinAzucar": true,
         "ingredientes": ["Maíz fresco","Queso","Leche","Cebolla"],
-        "fotoUrl": "assets/img/chipaguazu.png"
+        "fotoUrl": "./assets/img/chipaguazu.png"
 
       },
       {
@@ -23,7 +23,7 @@
         "esSaludable": false,
         "esSinAzucar": true,
         "ingredientes": ["Harina de maíz","Queso","Cebolla","Huevos"],
-        "fotoUrl": "assets/img/sopapya.png"
+        "fotoUrl": "./assets/img/sopapya.png"
       },
       {
         "id": "3",
@@ -33,7 +33,7 @@
         "esSaludable": true,
         "esSinAzucar": true,
         "ingredientes": ["Almidón de mandioca","Queso","Manteca"],
-         "fotoUrl": "assets/img/mbeju.png"
+         "fotoUrl": "./assets/img/mbeju.png"
       }
     ]
   },
@@ -170,7 +170,7 @@
         "esSaludable": false,
         "esSinAzucar": false,
         "ingredientes": [],
-        "fotoUrl": "assets/img/papasfritas.png"
+        "fotoUrl": "./assets/img/papasfritas.png"
       },
       {
         "id": "18",
@@ -190,7 +190,7 @@
         "esSaludable": true,
         "esSinAzucar": true,
         "ingredientes": ["Lechuga","Tomate","Zanahoria"],
-        "fotoUrl": "assets/img/ensaladasimple.png"
+        "fotoUrl": "./assets/img/ensaladasimple.png"
       }
     ]
   }

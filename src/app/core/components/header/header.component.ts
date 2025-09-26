@@ -1,6 +1,9 @@
 import { Component, effect, inject, signal } from '@angular/core';
 import { HeaderService } from '../../services/header.service';
 
+
+
+
 @Component({
   selector: 'app-header',
   templateUrl: './header.component.html',
