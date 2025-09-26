@@ -34,7 +34,7 @@
               "src/styles.scss"
             ],
             "scripts": [],
-            "baseHref": "/angularrestaurante/"
+            "baseHref": "/restaurante-angular/"
           },
           "configurations": {
             "production": {
